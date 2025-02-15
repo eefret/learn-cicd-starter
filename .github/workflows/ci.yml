@@ -21,6 +21,10 @@ jobs:
       - name: Check formatting
         run: test -z $(go fmt ./...)
 
+      - uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
+
   tests:
     name: Tests
     runs-on: ubuntu-latest
